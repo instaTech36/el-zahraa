@@ -68,9 +68,17 @@ class CompanyProfile(SingletonModel):
     title = models.CharField(max_length=50, verbose_name='اسم الشركة')
     profile = models.TextField(verbose_name='عن الشركة')
     description_about = models.TextField(verbose_name='المزيد عن الشركة (يعرض في صفحة المزيد)', blank=True)
+    facebook = models.URLField(verbose_name="رابط صفحة الفيسبوك")
+    gmail = models.URLField(verbose_name="الإيميل")
+    whatsapp = models.URLField(verbose_name="رابط الواتساب")
+    chat_me = models.URLField(verbose_name="رابط شات مي")
+    linkedin = models.URLField(verbose_name="رابط صفحة لينكد إن")
 
     def __str__(self):
         return f'بروفايل الشركة'
+    
+    class Meta:
+        verbose_name_plural = 'Company Profile'
 
 class CompanyImage(models.Model):
     company = models.ForeignKey(CompanyProfile, related_name='images', on_delete=models.CASCADE)
