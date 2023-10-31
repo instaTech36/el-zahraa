@@ -1,0 +1,29 @@
+{
+  "Index": {
+    "title": "Company Profile",
+    "products": "Products",
+    "more": "Find More",
+    "contact_title": "Get In Touch With Us",
+    "contact_desc": "If you have any enquiry, please feel free to email us at ningfc@achem-cn.ycgroup.tw or use the following enquiry form. Our sales representative will contact you within 24 hours. Thank you for your interest in our products.",
+    "msg":"Send Message",
+    "happy":"Happy to get in touch with you",
+    "name":"Name",
+    "email":"Email",
+    "message":"Message",
+
+    "quicklinks":"Quick Links",
+    "home":"Home",
+    "about":"About",
+    "catalog":"Catalog",
+    "emailus":"Email Us",
+    "contactus":"Contact Us",
+    "discord":"Discord Server",
+    "twitter":"twitter",
+    "whatsapp":"Whatsapp",
+    "facebook":"Facebook",
+    "ourproducts":"Our Products",
+    "members":"Team Members",
+    "features":"Features",
+    "app":"Applications"
+  }
+}
