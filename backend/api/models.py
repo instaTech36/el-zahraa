@@ -69,10 +69,11 @@ class CompanyProfile(SingletonModel):
     profile = models.TextField(verbose_name='عن الشركة')
     description_about = models.TextField(verbose_name='المزيد عن الشركة (يعرض في صفحة المزيد)', blank=True)
     facebook = models.URLField(verbose_name="رابط صفحة الفيسبوك")
-    gmail = models.URLField(verbose_name="الإيميل")
+    gmail = models.EmailField(verbose_name="الإيميل")
     whatsapp = models.URLField(verbose_name="رابط الواتساب")
     chat_me = models.URLField(verbose_name="رابط شات مي")
     linkedin = models.URLField(verbose_name="رابط صفحة لينكد إن")
+    pdf = models.URLField(verbose_name='رابط ملف الpdf')
 
     def __str__(self):
         return f'بروفايل الشركة'

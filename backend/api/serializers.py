@@ -52,4 +52,5 @@ class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = CompanyProfile
         fields = ('title_en', 'title_ar', 'profile_en', 'profile_ar',
-                  'description_about_en', 'description_about_ar', 'images', 'team', "facebook", "gmail", "whatsapp", "chat_me", "linkedin")
+                  'description_about_en', 'description_about_ar', 'images', 
+                  'team', "facebook", "gmail", "whatsapp", "chat_me", "linkedin", "pdf")
