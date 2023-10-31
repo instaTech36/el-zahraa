@@ -21,6 +21,8 @@ function Product() {
   let filteredProduct = products.filter(
     (product) => product.name_en === productName
   );
+
+  console.log(filteredProduct)
   
   const t = useTranslations("Index");
   const locale = useLocale();
@@ -38,11 +40,13 @@ function Product() {
       </h1>
       {loading && <ProductSlider images={filteredProduct[0].prod_images} />}
       <h1 className="mx-2 font-bold text-2xl my-3">{t("features")}</h1>
+      
       <pre className="mx-2 text-xl my-3">
         {loading && locale == "en"
-          ? filteredProduct[0].features_en
-          : loading && filteredProduct[0].features_ar}
+          ? `${filteredProduct[0].features_en}`
+          : loading && `${filteredProduct[0].features_ar}`}
       </pre>
+
       <pre className="mx-2 font-bold text-2xl my-3">{t("app")}</pre>
       <h1 className="mx-2 text-xl my-3">
         {loading && locale == "en"
