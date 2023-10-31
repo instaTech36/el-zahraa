@@ -35,7 +35,7 @@ const ProductSlider = ({images}) => {
         return(
           
           <div key={index}>
-          <SwiperSlide><img src={images[index].image} alt="product image" className='rounded-lg 0 h-[200px] w-[300px] md:h-[230px] md:w-[370px] '/></SwiperSlide>
+          <SwiperSlide><img src={images[index].image} alt="product image" className='rounded-lg 0 h-[200px] w-[300px] md:h-[230px] md:w-[370px] md:hover:w-[390px] md:hover:h-[250px] duration-300'/></SwiperSlide>
           
           </div>
   

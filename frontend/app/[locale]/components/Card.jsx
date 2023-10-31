@@ -1,11 +1,10 @@
 import { useLocale, useTranslations } from "next-intl";
-import Image from "next/image";
 export const Card = ({image,title_en,title_ar,description,category}) => {
   const t=useTranslations("Index")
   const locale=useLocale()
 
   return (
-    <div className="shadow-lg w-80 text-center mb-5 border-solid border-2 border-gray-200 rounded-lg">
+    <div className="shadow-lg w-80 hover:w-96 duration-500 text-center mb-5 border-solid border-2 border-gray-200 rounded-lg">
  
       <div className="w-full max-h-52 overflow-hidden rounded-lg">
         <img
