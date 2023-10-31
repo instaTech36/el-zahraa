@@ -20,7 +20,10 @@ const page = () => {
   const t=useTranslations("Index")
   const locale=useLocale()
 
+  const [prodImages, setProdImages] = useState([]);
   const [items, setItems] = useState([]);
+  
+  const [pics, setPics] = useState([]);
 
   const [loading, setLoading] = useState(false);
   useEffect(() => {
@@ -35,21 +38,46 @@ const page = () => {
       });
   }, []);
 
-  console.log(items.prod_images)
+  
+
+  useEffect(() => {
+    fetch('http://localhost:8000/products')
+     .then(response => response.json())
+     .then(data => {
+        const images = data.map(product => product.prod_images.map(image => image.image));
+        const flattenedImages = images.flat();
+        const prodImageArrays = [];
+        let currentProductImages = [];
+        flattenedImages.forEach(image => {
+          if (!currentProductImages.includes(image)) {
+            currentProductImages.push(image);
+          }
+          if (currentProductImages.length === images[0].length) {
+            prodImageArrays.push(currentProductImages);
+            currentProductImages = [];
+          }
+        });
+        setProdImages(prodImageArrays);
+      })
+     .catch(error => console.error(error));
+  }, []);
+
+
+  console.log(prodImages)
 
 
   const filteredItems=items.filter((item)=>item.category_name===x)
 
   return (
     <div className="flex justify-around flex-wrap mt-20 p-24">
-      {loading?filteredItems.map((item) => {
+      {loading?filteredItems.map((item,index) => {
         return (
           <>
           <div className="animate__animated animate__bounceIn">
             <Card
             title_en={item.name_en}
             title_ar={item.name_ar}
-              image={item.prod_images[0]}
+            image={prodImages[1][3]}
               
               description={locale=="en"?item.description_en:item.description_ar}
               category={item.category_name}

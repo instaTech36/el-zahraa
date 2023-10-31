@@ -8,7 +8,7 @@ export const Card = ({image,title_en,title_ar,description,category}) => {
     <div className="shadow-lg w-80 text-center mb-5 border-solid border-2 border-gray-200 rounded-lg">
  
       <div className="w-full max-h-52 overflow-hidden rounded-lg">
-        <Image
+        <img
           alt="CardImage"
           src={image}
           width={0}
