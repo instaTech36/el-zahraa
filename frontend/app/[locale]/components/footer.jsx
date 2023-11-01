@@ -28,7 +28,7 @@ function Footer() {
   return (
     <footer className=" bg-gray-900">
       <div className="mx-auto w-full max-w-screen-xl">
-        <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-3">
+        <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
           <div>
             <h2 className="mb-6 text-sm font-semibold uppercase text-white">
               {t("ourproducts")}
@@ -103,6 +103,16 @@ function Footer() {
                 <a href="contact" className="hover:underline">
                   {t("emailus")}
                 </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 className="mb-6 text-sm font-semibold uppercase text-white">
+              {t("address")}
+            </h2>
+            <ul className="text-gray-400 font-medium">
+              <li className="mb-4">       
+                  {t("location")}
               </li>
             </ul>
           </div>

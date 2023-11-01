@@ -49,8 +49,8 @@ function Product() {
       
       <p className="  text-xl mb-10 whitespace-pre-line">
         {loading && locale == "en"
-          ? `${filteredProduct[0].features_en}`
-          : loading && `${filteredProduct[0].features_ar}`}
+          ? `${filteredProduct[0].description_full_en}`
+          : loading && `${filteredProduct[0].description_full_ar}`}
       </p>
 
       <h1 className="  font-bold text-2xl mb-10 mt-10">{t("features")}</h1>
