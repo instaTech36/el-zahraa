@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import img1 from "@/app/[locale]/img/2.jpg";
+
 import Image from "next/image";
 import Link from "next/link";
 import axios from "axios";
@@ -10,29 +10,47 @@ const Experience = () => {
 
   const t=useTranslations("Index")
   const locale=useLocale()
+  const API = process.env.NEXT_PUBLIC_BACKEND_API;
+  let firstImage="";
 
   const [item, setItem] = useState({});
+  const [logo, setLogo] = useState();
   const [category, setCategory] = useState([]);
 
   useEffect(() => {
-    axios.get("http://127.0.0.1:8000/").then((response) => {
+    axios.get(API).then((response) => {
       setItem(response.data.profile);
     });
   }, []);
 
   useEffect(() => {
-    axios.get("http://127.0.0.1:8000/categories").then((response) => {
+    axios.get(API+"categories").then((response) => {
       setCategory(response.data);
     });
   }, []);
 
+  fetch(API)
+  .then(response => response.json())
+  .then(data => {
+     firstImage = data.profile.images[0].image;
+     setLogo(firstImage)
+   })
+  .catch(error => console.error(error));
+
+
+ 
+
+
+
+
   return (
     <div className="row lg:flex mb-20 justify">
       <div className="col-lg-6 p-0 lg:w-1/2">
-        <Image
+        <img
           className="hidden md:block w-full h-full"
-          src={img1}
+          src={API+logo}
           alt="Logo"
+          
         />
       </div>
       <div className="col-lg-6 p-0 lg:w-1/2 pl-10 pr-10 pt-10">

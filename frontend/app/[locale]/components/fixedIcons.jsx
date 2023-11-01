@@ -6,6 +6,7 @@ import { FaArrowCircleUp } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 function FixedIcons() {
   const [isVisible, setIsVisible] = useState(false);
+  const API = process.env.NEXT_PUBLIC_BACKEND_API;
   const [items, setItems] = useState({});
     const [loading, setLoading] = useState(false);
   useEffect(() => {
@@ -24,7 +25,6 @@ function FixedIcons() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  console.log(items)
 
   const goTop = () => {
     window.scrollTo({
@@ -36,7 +36,7 @@ function FixedIcons() {
 
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/")
+    fetch(API)
       .then((response) => {
         return response.json();
       })

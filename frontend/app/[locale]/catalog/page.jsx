@@ -4,9 +4,10 @@ import React, { useEffect, useState } from 'react'
 
 const page = () => {
   const [items, setItems] = useState([]);
+  const API = process.env.NEXT_PUBLIC_BACKEND_API;
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/")
+    fetch(API)
       .then((response) => {
         return response.json();
       })

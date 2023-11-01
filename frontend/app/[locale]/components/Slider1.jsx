@@ -12,13 +12,13 @@ const cairo=Cairo({
   weight:'400'
 })
 
-
+const API = process.env.NEXT_PUBLIC_BACKEND_API;
 const Slider1 = () => {
   const [items, setItem] = useState([]);
   const [loading,setLoading]=useState(false)
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/categories")
+    fetch(API+"categories")
       .then((response) => response.json())
       .then((data) => setItem(data))
       .catch((err) => console.log(err));

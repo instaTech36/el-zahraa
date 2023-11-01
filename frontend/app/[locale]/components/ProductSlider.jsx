@@ -1,16 +1,14 @@
-
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
-const ProductSlider = ({images}) => {
-  
+const ProductSlider = ({ images }) => {
   return (
     <Swiper
-    navigation={{ clickable: true }}
+      navigation={{ clickable: true }}
       modules={[Navigation, Pagination, Scrollbar, A11y]}
       spaceBetween={1}
       slidesPerView={3}
@@ -22,27 +20,27 @@ const ProductSlider = ({images}) => {
           slidesPerView: 1,
         },
 
-        900:{
-          slidesPerView:2,
+        900: {
+          slidesPerView: 2,
         },
         1200: {
           slidesPerView: 3,
         },
-  
       }}
     >
-      {images.map((item,index)=>{
-        return(
-          
+      {images.map((item, index) => {
+        return (
           <div key={index}>
-          <SwiperSlide><img src={images[index].image} alt="product image " className='animate__animated animate__bounceIn rounded-lg 0 h-[200px] w-[300px] md:h-[230px] md:w-[370px] md:hover:w-[380px] md:hover:h-[240px] duration-500'/></SwiperSlide>
-          
+            <SwiperSlide>
+              <img
+                src={images[index].image}
+                alt="product image "
+                className="animate__animated animate__bounceIn rounded-lg 0 h-[200px] w-[300px] md:h-[230px] md:w-[370px] md:hover:w-[380px] md:hover:h-[240px] duration-500"
+              />
+            </SwiperSlide>
           </div>
-  
-        )
-      }
-      )
-      }
+        );
+      })}
     </Swiper>
   );
 };

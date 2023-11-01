@@ -13,9 +13,10 @@ function Product() {
   productName = productName.replace("%20", " ");
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
+  const API = process.env.NEXT_PUBLIC_BACKEND_API;
 
   useEffect(() => {
-    axios.get("http://127.0.0.1:8000/products").then((response) => {
+    axios.get(API+"products").then((response) => {
       setProducts(response.data);
       setLoading(true);
 
@@ -37,7 +38,7 @@ function Product() {
           ? filteredProduct[0].name_en
           : loading && filteredProduct[0].name_ar}
       </h1>
-      <h1 className="  text-xl mb-10">
+      <h1 className="  text-xl mb-10 whitespace-normal">
         {loading && locale == "en"
           ? filteredProduct[0].description_en
           : loading && filteredProduct[0].description_ar}
@@ -45,14 +46,14 @@ function Product() {
       {loading && <ProductSlider images={filteredProduct[0].prod_images} />}
       <h1 className="  font-bold text-2xl mb-10 mt-10">{t("features")}</h1>
       
-      <p className="  text-xl mb-10">
+      <p className="  text-xl mb-10 whitespace-pre-line">
         {loading && locale == "en"
           ? `${filteredProduct[0].features_en}`
           : loading && `${filteredProduct[0].features_ar}`}
       </p>
 
       <h1 className="  font-bold text-2xl mb-10">{t("app")}</h1>
-      <p className="  text-xl mb-10">
+      <p className="  text-xl mb-10 whitespace-pre-line">
         {loading && locale == "en"
           ? `${filteredProduct[0].applications_en}`
           : loading && `${filteredProduct[0].applications_ar}`}
