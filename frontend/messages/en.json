@@ -4,7 +4,7 @@
     "products": "Products",
     "more": "Find More",
     "contact_title": "Get In Touch With Us",
-    "contact_desc": "If you have any enquiry, please feel free to email us at ningfc@achem-cn.ycgroup.tw or use the following enquiry form. Our sales representative will contact you within 24 hours. Thank you for your interest in our products.",
+    "contact_desc": "If you have any enquiry, please feel free to email us at mohamed@gmail.com or use the following enquiry form. Our sales representative will contact you within 24 hours. Thank you for your interest in our products.",
     "msg":"Send Message",
     "happy":"Happy to get in touch with you",
     "name":"Name",
@@ -17,13 +17,19 @@
     "catalog":"Catalog",
     "emailus":"Email Us",
     "contactus":"Contact Us",
-    "discord":"Discord Server",
-    "twitter":"twitter",
+    "wechat":"We Chat",
+    "linkedin":"LinkedIn",
     "whatsapp":"Whatsapp",
     "facebook":"Facebook",
+    "gmail":"Gmail",
     "ourproducts":"Our Products",
     "members":"Team Members",
     "features":"Features",
-    "app":"Applications"
+    "app":"Applications",
+    "accordionTitle1":"Why to choose El-Zahraa ?",
+    "accordionTitle2":"Can our private logo/label be printed on the packaging?",
+    "accordionAnswer1":"El-Zahraa is the first PVC tape producer in Taiwan. As the first to develop solvent acrylic BOPP tape, it is known internationally as the leading manufacturer in the world for formulating and coating of various grades of acrylic adhesives.",
+    "accordionAnswer2": "Yes, your own private logo/ label can be printed on the packaging upon your legal authorization, we support OEM service according to our clients' requirement for many years."
+
   }
 }

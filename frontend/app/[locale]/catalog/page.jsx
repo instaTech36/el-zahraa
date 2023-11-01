@@ -1,10 +1,23 @@
-import React from 'react'
+"use client"
+import React, { useEffect, useState } from 'react'
 
 
 const page = () => {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    fetch("http://127.0.0.1:8000/")
+      .then((response) => {
+        return response.json();
+      })
+      .then((result) => {
+        setItems(result.profile);
+      });
+  }, []);
+
   return (
     <div>
-      <iframe src="https://drive.google.com/file/d/1LHx0zgiytBR5xSl8kp0waZ3vZX9Ddg7V/preview" width="100%" height="700px"></iframe>
+      <iframe src={items.pdf} width="100%" height="700px"></iframe>
     </div>
   )
 }

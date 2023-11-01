@@ -2,6 +2,7 @@
 import { useLocale, useTranslations } from "next-intl";
 import React , {useState , useEffect} from "react";
 function Footer() {
+    const [items, setItems] = useState([]);
   const [category, setCategory] = useState([]);
   const API =process.env.NEXT_PUBLIC_BACKEND_API
   useEffect(() => {
@@ -10,6 +11,16 @@ function Footer() {
     .then((data) => setCategory(data))
     .catch((err) => console.log(err));
  }, []);
+
+ useEffect(() => {
+    fetch("http://127.0.0.1:8000/")
+      .then((response) => {
+        return response.json();
+      })
+      .then((result) => {
+        setItems(result.profile);
+      });
+  }, []);
 
  const t=useTranslations("Index")
  const locale=useLocale()
@@ -36,16 +47,19 @@ function Footer() {
             <h2 className="mb-6 text-sm font-semibold uppercase text-white">{t("contactus")}</h2>
             <ul className="text-gray-400 font-medium">
                 <li className="mb-4">
-                    <a href="#" className="hover:underline">{t("discord")}</a>
+                    <a href={`${items.facebook}`} className="hover:underline">{t("facebook")}</a>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className="hover:underline">{t("twitter")}</a>
+                    <a href={`${items.whatsapp}`} className="hover:underline">{t("whatsapp")}</a>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className="hover:underline">{t("facebook")}</a>
+                    <a href={`${items.chat_me}`} className="hover:underline">{t("wechat")}</a>
                 </li>
                 <li className="mb-4">
-                    <a href="https://wa.me/+201099763724" className="hover:underline"> {t("whatsapp")}</a>
+                    <a href={`${items.linkedin}`} className="hover:underline"> {t("linkedin")}</a>
+                </li>
+                <li className="mb-4">
+                    <a href={`mailto:${items.gmail}`} className="hover:underline"> {t("gmail")}</a>
                 </li>
             </ul>
         </div>

@@ -31,28 +31,28 @@ function Product() {
   const locale = useLocale();
   return (
     loading === true ? 
-    <div className={`myAnimation md:mx-32 animate animate-spin` }>
-      <h1 className="text-center font-bold text-2xl my-3">
+    <div className="p-10 ">
+      <h1 className="text-center font-bold text-2xl my-3 mb-10">
         {loading && locale == "en"
           ? filteredProduct[0].name_en
           : loading && filteredProduct[0].name_ar}
       </h1>
-      <h1 className="  text-xl my-3">
+      <h1 className="  text-xl mb-10">
         {loading && locale == "en"
           ? filteredProduct[0].description_en
           : loading && filteredProduct[0].description_ar}
       </h1>
       {loading && <ProductSlider images={filteredProduct[0].prod_images} />}
-      <h1 className="  font-bold text-2xl my-3">{t("features")}</h1>
+      <h1 className="  font-bold text-2xl mb-10 mt-10">{t("features")}</h1>
       
-      <p className="  text-xl my-3">
+      <p className="  text-xl mb-10">
         {loading && locale == "en"
           ? `${filteredProduct[0].features_en}`
           : loading && `${filteredProduct[0].features_ar}`}
       </p>
 
-      <h1 className="  font-bold text-2xl my-3">{t("app")}</h1>
-      <p className="  text-xl my-3">
+      <h1 className="  font-bold text-2xl mb-10">{t("app")}</h1>
+      <p className="  text-xl mb-10">
         {loading && locale == "en"
           ? `${filteredProduct[0].applications_en}`
           : loading && `${filteredProduct[0].applications_ar}`}
