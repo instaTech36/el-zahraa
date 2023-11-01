@@ -38,12 +38,21 @@ function Product() {
           ? filteredProduct[0].name_en
           : loading && filteredProduct[0].name_ar}
       </h1>
-      <h1 className="  text-xl mb-10 whitespace-normal">
+      <h1 className="text-xl mb-10 whitespace-normal text-center">
         {loading && locale == "en"
           ? filteredProduct[0].description_en
           : loading && filteredProduct[0].description_ar}
       </h1>
       {loading && <ProductSlider images={filteredProduct[0].prod_images} />}
+
+      <h1 className="  font-bold text-2xl mb-10 mt-10">{t("description")}</h1>
+      
+      <p className="  text-xl mb-10 whitespace-pre-line">
+        {loading && locale == "en"
+          ? `${filteredProduct[0].features_en}`
+          : loading && `${filteredProduct[0].features_ar}`}
+      </p>
+
       <h1 className="  font-bold text-2xl mb-10 mt-10">{t("features")}</h1>
       
       <p className="  text-xl mb-10 whitespace-pre-line">

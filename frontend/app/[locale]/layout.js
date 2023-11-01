@@ -6,7 +6,7 @@ import Form from './components/form'
 import Navbar from './components/navbar'
 import './globals.css'
 
-import { Cairo } from '@next/font/google';
+import { Cairo } from 'next/font/google';
 
 const cairo=Cairo({
   subsets:['latin'],

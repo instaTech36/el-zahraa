@@ -1,17 +1,24 @@
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { Navigation, Pagination, Scrollbar, A11y,Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import "swiper/css/autoplay";
 
 const ProductSlider = ({ images }) => {
   return (
     <Swiper
+    
       navigation={{ clickable: true }}
-      modules={[Navigation, Pagination, Scrollbar, A11y]}
+      modules={[Navigation, Pagination, Scrollbar, A11y,Autoplay]}
+      Autoplay
       spaceBetween={1}
       slidesPerView={3}
+      autoplay={{
+        delay: 3500,
+      }}
+   
       breakpoints={{
         0: {
           slidesPerView: 1,

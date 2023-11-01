@@ -34,7 +34,7 @@ const Slider1 = () => {
   
 
   return (
-    <Carousel className="caro">
+    <Carousel autoplay={true} loop={true} className="caro">
       {loading?items.map((item) => {
         return (
 
