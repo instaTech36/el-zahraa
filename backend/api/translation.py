@@ -6,7 +6,7 @@ class CategoryTranslation(TranslationOptions):
     fields = ('name', 'description', 'use',)
 
 class ProductTranslation(TranslationOptions):
-    fields = ('name', 'description', 'features', 'applications')
+    fields = ('name', 'description', 'features', 'applications', 'description_full')
 
 class ProfileTranslation(TranslationOptions):
     fields = ('title', 'profile', 'description_about')

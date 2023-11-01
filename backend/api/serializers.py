@@ -29,8 +29,9 @@ class ProductSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Product
-        fields = ('id', 'name_en', 'name_ar', 'category_name', 'description_en', 'description_ar', 'features_en', 'features_ar',
-                  'applications_en', 'applications_ar', 'prod_images', 'app_images')
+        fields = ('id', 'name_en', 'name_ar', 'category_name', 'description_en', 'description_ar', 'features_en', 
+                  'description_full_en', 'description_full_ar', 'features_ar', 'applications_en', 'applications_ar', 
+                  'prod_images', 'app_images', )
 
 
 class CompanyImageSerializer(serializers.ModelSerializer):
@@ -52,5 +53,5 @@ class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = CompanyProfile
         fields = ('title_en', 'title_ar', 'profile_en', 'profile_ar',
-                  'description_about_en', 'description_about_ar', 'images', 
+                  'description_about_en', 'description_about_ar', 'images',
                   'team', "facebook", "gmail", "whatsapp", "chat_me", "linkedin", "pdf")

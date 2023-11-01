@@ -31,6 +31,7 @@ class Product(ContentFields):
         Category, related_name='products', on_delete=models.CASCADE)
     features = models.TextField(blank=True, verbose_name='المزايا')
     applications = models.TextField(blank=True, verbose_name='التطبيقات')
+    description_full = models.TextField(blank=True, verbose_name='التفاصيل')
 
     def __str__(self):
         return self.name
