@@ -1,9 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { FaFacebook, FaEnvelope } from "react-icons/fa";
-import { AiOutlineWhatsApp, AiFillWechat } from "react-icons/ai";
+import {  AiFillWechat } from "react-icons/ai";
 import { FaArrowCircleUp } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import { IoLogoWhatsapp } from 'react-icons/io';
+
 function FixedIcons() {
   const [isVisible, setIsVisible] = useState(false);
   const API = process.env.NEXT_PUBLIC_BACKEND_API;
@@ -82,7 +84,7 @@ function FixedIcons() {
           className=" text-green-500 cursor-pointer  font-bold text-4xl transition-all duration-300 hover:text-green-700 mb-2"
           title="WhatsApp"
         >
-          <AiOutlineWhatsApp />
+          <IoLogoWhatsapp />
         </a>
       </div>
       <div className=" w-[40px]  z-30">

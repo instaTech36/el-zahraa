@@ -2,11 +2,11 @@
 import { useLocale, useTranslations } from "next-intl";
 import React, { useState, useEffect } from "react";
 import { FaFacebook, FaEnvelope } from "react-icons/fa";
-import { AiOutlineWhatsApp, AiFillWechat, AiFillHome } from "react-icons/ai";
+import {  AiFillWechat, AiFillHome } from "react-icons/ai";
 import { FaLinkedin } from "react-icons/fa";
 import { MdOutlineElectricBolt , MdLocationOn, MdProductionQuantityLimits } from 'react-icons/md';
 import { BsFileEarmarkPdfFill } from 'react-icons/bs';
-
+import { IoLogoWhatsapp } from 'react-icons/io';
 
 function Footer() {
   const [items, setItems] = useState([]);
@@ -45,7 +45,7 @@ function Footer() {
                 return (
                   <li className="mb-4">
                     <a href={`/${item.name_en}`} className=" hover:underline flex items-center gap-2">
-                    <MdProductionQuantityLimits/>  {locale == "en" ? item.name_en : item.name_ar}
+                    <MdProductionQuantityLimits className="text-cyan-700" />  {locale == "en" ? item.name_en : item.name_ar}
                     </a>
                   </li>
                 );
@@ -59,25 +59,26 @@ function Footer() {
             <ul className="text-gray-400 font-medium">
               <li className="mb-4">
                 <a href={`${items.facebook}`} className="hover:underline flex items-center gap-2">
-                  <FaFacebook/> {t("facebook")}
-                </a>
-              </li>
-              <li className="mb-4">
-                <a href={`${items.whatsapp}`} className="hover:underline  flex items-center gap-2">
-                <AiOutlineWhatsApp/>  {t("whatsapp")}
-                </a>
-              </li>
-              <li className="mb-4">
-                <a href={`${items.chat_me}`} className="hover:underline  flex items-center gap-2">
-                  <AiFillWechat/>  {t("wechat")}
+                  <FaFacebook className="text-blue-500"/> {t("facebook")}
                 </a>
               </li>
               <li className="mb-4">
                 <a href={`${items.linkedin}`} className="hover:underline  flex items-center gap-2">
                   {" "}
-              <FaLinkedin/>  {t("linkedin")}
+              <FaLinkedin className="text-blue-500"/>  {t("linkedin")}
                 </a>
               </li>
+              <li className="mb-4">
+                <a href={`${items.whatsapp}`} className="hover:underline  flex items-center gap-2">
+                <IoLogoWhatsapp className="text-green-500"/>  {t("whatsapp")}
+                </a>
+              </li>
+              <li className="mb-4">
+                <a href={`${items.chat_me}`} className="hover:underline  flex items-center gap-2">
+                  <AiFillWechat className="text-green-500"/>  {t("wechat")}
+                </a>
+              </li>
+              
               
             </ul>
           </div>
@@ -88,23 +89,23 @@ function Footer() {
             <ul className="text-gray-400 font-medium">
               <li className="mb-4">
                 <a href="/" className="hover:underline flex items-center gap-2">
-                <AiFillHome/>  {t("home")}
+                <AiFillHome className="text-amber-300"/>  {t("home")}
                 </a>
               </li>
               <li className="mb-4">
                 <a href="/about" className="hover:underline flex items-center gap-2">
-                  <MdOutlineElectricBolt/> {t("about")}
+                  <MdOutlineElectricBolt className="text-yellow-700"/> {t("about")}
                 </a>
               </li>
               <li className="mb-4">
                 <a href="/catalog" className="hover:underline flex items-center gap-2">
-                  <BsFileEarmarkPdfFill/> {t("catalog")}
+                  <BsFileEarmarkPdfFill className="text-red-700"/> {t("catalog")}
                 </a>
               </li>
               <li className="mb-4">
                 <a href={`/contact`} className="hover:underline  flex items-center gap-2">
                   {" "}
-                  <FaEnvelope/>{t("emailus")}
+                  <FaEnvelope className="text-yellow-500"/>{t("emailus")}
                 </a>
               </li>
             </ul>
@@ -115,7 +116,7 @@ function Footer() {
             </h2>
             <ul className="text-gray-400 font-medium ">
               <li className="mb-4 flex items-center gap-2">       
-              <MdLocationOn/>  {t("location")}
+              <MdLocationOn className="text-light-green-800"/>  {t("location")}
               </li>
             </ul>
           </div>
