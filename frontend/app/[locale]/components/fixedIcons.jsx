@@ -69,7 +69,7 @@ function FixedIcons() {
 
       <div className=" w-[40px]  z-30 mb-2">
         <a
-          href={`mailto:${items.gmail}`}
+          href={`/contact`}
           className=" text-yellow-800 cursor-pointer font-bold text-4xl transition-all duration-300 hover:text-yellow-900"
           title="Email"
         >

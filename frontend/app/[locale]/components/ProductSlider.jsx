@@ -35,7 +35,8 @@ const ProductSlider = ({ images }) => {
         },
       }}
     >
-      {images.map((item, index) => {
+      {
+      images.map((item, index) => {
         return (
           <div key={index}>
             <SwiperSlide>
@@ -47,7 +48,8 @@ const ProductSlider = ({ images }) => {
             </SwiperSlide>
           </div>
         );
-      })}
+      })
+      }
     </Swiper>
   );
 };

@@ -6,6 +6,7 @@ import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { AccordionCustomAnimation } from "../../components/Accordion";
 import { Spin } from "../../components/Spin";
+import KeenSlider from "../../components/KeenSlider";
 
 function Product() {
   let text = useParams();
@@ -34,40 +35,48 @@ function Product() {
     loading === true ? 
     <div className="p-10 ">
       <h1 className="text-center font-bold text-2xl my-3 mb-10">
-        {loading && locale == "en"
+        {locale == "en"
           ? filteredProduct[0].name_en
-          : loading && filteredProduct[0].name_ar}
+          :  filteredProduct[0].name_ar}
       </h1>
       <h1 className="text-xl mb-10 whitespace-normal text-center">
-        {loading && locale == "en"
+        { locale == "en"
           ? filteredProduct[0].description_en
-          : loading && filteredProduct[0].description_ar}
+          :  filteredProduct[0].description_ar}
       </h1>
-      {loading && <ProductSlider images={filteredProduct[0].prod_images} />}
+
+      
+<div className="md:w-[600px] lg:w-[1000px] m-auto">
+    <KeenSlider images={filteredProduct[0].prod_images} />
+</div>
+    
 
       <h1 className="  font-bold text-2xl mb-10 mt-10">{t("description")}</h1>
       
       <p className="  text-xl mb-10 whitespace-pre-line">
-        {loading && locale == "en"
+        { locale == "en"
           ? `${filteredProduct[0].description_full_en}`
-          : loading && `${filteredProduct[0].description_full_ar}`}
+          :  `${filteredProduct[0].description_full_ar}`}
       </p>
 
       <h1 className="  font-bold text-2xl mb-10 mt-10">{t("features")}</h1>
       
       <p className="  text-xl mb-10 whitespace-pre-line">
-        {loading && locale == "en"
+        { locale == "en"
           ? `${filteredProduct[0].features_en}`
-          : loading && `${filteredProduct[0].features_ar}`}
+          :  `${filteredProduct[0].features_ar}`}
       </p>
 
       <h1 className="  font-bold text-2xl mb-10">{t("app")}</h1>
       <p className="  text-xl mb-10 whitespace-pre-line">
-        {loading && locale == "en"
+        {locale == "en"
           ? `${filteredProduct[0].applications_en}`
-          : loading && `${filteredProduct[0].applications_ar}`}
+          :  `${filteredProduct[0].applications_ar}`}
       </p>
-      {loading && <ProductSlider images={filteredProduct[0].app_images} />}
+      
+    <div className="md:w-[600px] lg:w-[1000px] m-auto">
+         <KeenSlider images={filteredProduct[0].app_images} />
+    </div>
 
       <AccordionCustomAnimation/>
     </div>

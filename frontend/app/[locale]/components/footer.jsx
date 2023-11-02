@@ -1,6 +1,13 @@
 "use client";
 import { useLocale, useTranslations } from "next-intl";
 import React, { useState, useEffect } from "react";
+import { FaFacebook, FaEnvelope } from "react-icons/fa";
+import { AiOutlineWhatsApp, AiFillWechat, AiFillHome } from "react-icons/ai";
+import { FaLinkedin } from "react-icons/fa";
+import { MdOutlineElectricBolt , MdLocationOn, MdProductionQuantityLimits } from 'react-icons/md';
+import { BsFileEarmarkPdfFill } from 'react-icons/bs';
+
+
 function Footer() {
   const [items, setItems] = useState([]);
   const [category, setCategory] = useState([]);
@@ -37,8 +44,8 @@ function Footer() {
               {category.map((item) => {
                 return (
                   <li className="mb-4">
-                    <a href={`/${item.name_en}`} className=" hover:underline">
-                      {locale == "en" ? item.name_en : item.name_ar}
+                    <a href={`/${item.name_en}`} className=" hover:underline flex items-center gap-2">
+                    <MdProductionQuantityLimits/>  {locale == "en" ? item.name_en : item.name_ar}
                     </a>
                   </li>
                 );
@@ -51,32 +58,27 @@ function Footer() {
             </h2>
             <ul className="text-gray-400 font-medium">
               <li className="mb-4">
-                <a href={`${items.facebook}`} className="hover:underline">
-                  {t("facebook")}
+                <a href={`${items.facebook}`} className="hover:underline flex items-center gap-2">
+                  <FaFacebook/> {t("facebook")}
                 </a>
               </li>
               <li className="mb-4">
-                <a href={`${items.whatsapp}`} className="hover:underline">
-                  {t("whatsapp")}
+                <a href={`${items.whatsapp}`} className="hover:underline  flex items-center gap-2">
+                <AiOutlineWhatsApp/>  {t("whatsapp")}
                 </a>
               </li>
               <li className="mb-4">
-                <a href={`${items.chat_me}`} className="hover:underline">
-                  {t("wechat")}
+                <a href={`${items.chat_me}`} className="hover:underline  flex items-center gap-2">
+                  <AiFillWechat/>  {t("wechat")}
                 </a>
               </li>
               <li className="mb-4">
-                <a href={`${items.linkedin}`} className="hover:underline">
+                <a href={`${items.linkedin}`} className="hover:underline  flex items-center gap-2">
                   {" "}
-                  {t("linkedin")}
+              <FaLinkedin/>  {t("linkedin")}
                 </a>
               </li>
-              <li className="mb-4">
-                <a href={`mailto:${items.gmail}`} className="hover:underline">
-                  {" "}
-                  {t("gmail")}
-                </a>
-              </li>
+              
             </ul>
           </div>
           <div>
@@ -85,23 +87,24 @@ function Footer() {
             </h2>
             <ul className="text-gray-400 font-medium">
               <li className="mb-4">
-                <a href="/" className="hover:underline">
-                  {t("home")}
+                <a href="/" className="hover:underline flex items-center gap-2">
+                <AiFillHome/>  {t("home")}
                 </a>
               </li>
               <li className="mb-4">
-                <a href="/about" className="hover:underline">
-                  {t("about")}
+                <a href="/about" className="hover:underline flex items-center gap-2">
+                  <MdOutlineElectricBolt/> {t("about")}
                 </a>
               </li>
               <li className="mb-4">
-                <a href="/catalog" className="hover:underline">
-                  {t("catalog")}
+                <a href="/catalog" className="hover:underline flex items-center gap-2">
+                  <BsFileEarmarkPdfFill/> {t("catalog")}
                 </a>
               </li>
               <li className="mb-4">
-                <a href="contact" className="hover:underline">
-                  {t("emailus")}
+                <a href={`/contact`} className="hover:underline  flex items-center gap-2">
+                  {" "}
+                  <FaEnvelope/>{t("emailus")}
                 </a>
               </li>
             </ul>
@@ -110,16 +113,16 @@ function Footer() {
             <h2 className="mb-6 text-sm font-semibold uppercase text-white">
               {t("address")}
             </h2>
-            <ul className="text-gray-400 font-medium">
-              <li className="mb-4">       
-                  {t("location")}
+            <ul className="text-gray-400 font-medium ">
+              <li className="mb-4 flex items-center gap-2">       
+              <MdLocationOn/>  {t("location")}
               </li>
             </ul>
           </div>
         </div>
         <div className="px-4 py-6  bg-gray-700 text-center">
           <span className="text-sm text-gray-300 text-center">
-            © 2023 <a href="/">El-Zahraa</a>. All Rights Reserved.
+           © 2023 <a href="/">El-Zahraa</a>. All Rights Reserved.
           </span>
         </div>
       </div>
