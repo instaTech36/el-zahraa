@@ -140,8 +140,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'http://51.20.72.25',
-    'http://wwww.al-zahraa.co',
     'http://13.51.81.22'
+    'http://wwww.al-zahraa.co',
+    'https://wwww.al-zahraa.co',
+    'http://al-zahraa.co',
+    'https://al-zahraa.co',
 ]
 
 #CSRF
@@ -149,6 +152,7 @@ CSRF_TRUSTED_ORIGINS = [
     'http://51.20.72.25',
     'http://13.51.81.22',
     'http://api.al-zahraa.co',
+    'https://api.al-zahraa.co',
 ]
 
 #Translation settings
