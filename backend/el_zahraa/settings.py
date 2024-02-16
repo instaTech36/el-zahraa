@@ -141,8 +141,8 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'http://51.20.72.25',
     'http://13.51.81.22'
-    'http://wwww.al-zahraa.co',
-    'https://wwww.al-zahraa.co',
+    'http://www.al-zahraa.co',
+    'https://www.al-zahraa.co',
     'http://al-zahraa.co',
     'https://al-zahraa.co',
 ]
