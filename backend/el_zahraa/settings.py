@@ -12,7 +12,10 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    '51.20.72.25'
+    '51.20.72.25',
+    '13.51.81.22',
+    '.al-zahraa.co',
+    'api.al-zahraa.co'
 ]
 
 
